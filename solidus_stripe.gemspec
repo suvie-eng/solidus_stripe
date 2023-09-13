@@ -3,7 +3,7 @@
 require_relative 'lib/solidus_stripe/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'solidus_stripe'
+  spec.name = 'solidus_stripe_archive'
   spec.version = SolidusStripe::VERSION
   spec.authors = ['Solidus Team']
   spec.email = 'contact@solidus.io'
