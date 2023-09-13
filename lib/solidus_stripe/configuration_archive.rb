@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module SolidusStripe
-  class Configuration
+  class ConfigurationArchive
     # Define here the settings for this extensions, e.g.:
     #
     # attr_accessor :my_setting
@@ -9,7 +9,7 @@ module SolidusStripe
 
   class << self
     def configuration
-      @configuration ||= Configuration.new
+      @configuration ||= ConfigurationArchive.new
     end
 
     alias config configuration
