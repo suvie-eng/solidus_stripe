@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module SolidusStripe
+module SolidusStripeArchive
   class PaymentRequestController < Spree::BaseController
     include Spree::Core::ControllerHelpers::Order
 
     def shipping_rates
-      rates = SolidusStripe::ShippingRatesService.new(
+      rates = SolidusStripeArchive::ShippingRatesService.new(
         current_order,
         spree_current_user,
         params[:shipping_address]
@@ -21,13 +21,13 @@ module SolidusStripe
     def update_order
       current_order.restart_checkout_flow
 
-      address = SolidusStripe::AddressFromParamsService.new(
+      address = SolidusStripeArchive::AddressFromParamsService.new(
         shipping_address_from_params,
         spree_current_user
       ).call
 
       if address.valid?
-        SolidusStripe::PrepareOrderForPaymentService.new(address, self).call
+        SolidusStripeArchive::PrepareOrderForPaymentService.new(address, self).call
 
         if current_order.payment?
           render json: { success: true }

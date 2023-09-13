@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module SolidusStripe
+module SolidusStripeArchive
   class IntentsController < Spree::BaseController
     include Spree::Core::ControllerHelpers::Order
 
@@ -10,7 +10,7 @@ module SolidusStripe
     end
 
     def create_payment
-      create_payment_service = SolidusStripe::CreateIntentsPaymentService.new(
+      create_payment_service = SolidusStripeArchive::CreateIntentsPaymentService.new(
         params[:stripe_payment_intent_id],
         stripe,
         self

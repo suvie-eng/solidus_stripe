@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module SolidusStripe
+module SolidusStripeArchive
   class PrepareOrderForPaymentService
     attr_reader :order, :address, :user, :email, :shipping_id
 

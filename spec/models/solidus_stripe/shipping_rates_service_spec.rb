@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe SolidusStripe::ShippingRatesService do
+RSpec.describe SolidusStripeArchive::ShippingRatesService do
   let(:service) { described_class.new(order, user, params) }
 
   let(:order) { create :order }

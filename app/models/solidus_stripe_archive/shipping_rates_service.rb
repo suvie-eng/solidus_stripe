@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module SolidusStripe
+module SolidusStripeArchive
   class ShippingRatesService
     attr_reader :order, :user, :shipping_address_params
 
@@ -40,7 +40,7 @@ module SolidusStripe
     end
 
     def address_from_params
-      SolidusStripe::AddressFromParamsService.new(shipping_address_params, user).call
+      SolidusStripeArchive::AddressFromParamsService.new(shipping_address_params, user).call
     end
   end
 end

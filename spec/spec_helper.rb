@@ -19,7 +19,7 @@ require 'solidus_dev_support/rspec/feature_helper'
 Dir["#{__dir__}/support/**/*.rb"].sort.each { |f| require f }
 
 # Requires factories defined in lib/solidus_stripe/testing_support/factories.rb
-SolidusDevSupport::TestingSupport::Factories.load_for(SolidusStripe::Engine)
+SolidusDevSupport::TestingSupport::Factories.load_for(SolidusStripeArchive::Engine)
 
 # Requires card input helper defined in lib/solidus_stripe/testing_support/card_input_helper.rb
 require 'solidus_stripe/testing_support/card_input_helper'

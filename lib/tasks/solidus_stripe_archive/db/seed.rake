@@ -4,7 +4,7 @@ namespace :db do
   namespace :seed do
     desc 'Loads stripe sample data'
     task solidus_stripe: :environment do
-      seed_file = Dir[SolidusStripe::Engine.root.join('db', 'seeds.rb')][0]
+      seed_file = Dir[SolidusStripeArchive::Engine.root.join('db', 'seeds.rb')][0]
       return unless File.exist?(seed_file)
 
       puts "Seeding #{seed_file}..."

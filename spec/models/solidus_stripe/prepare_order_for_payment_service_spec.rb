@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe SolidusStripe::PrepareOrderForPaymentService do
+RSpec.describe SolidusStripeArchive::PrepareOrderForPaymentService do
   let(:service) { described_class.new(address, controller) }
 
   let(:address) { create :address }

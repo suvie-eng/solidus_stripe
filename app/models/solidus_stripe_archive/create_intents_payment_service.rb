@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module SolidusStripe
+module SolidusStripeArchive
   class CreateIntentsPaymentService
     attr_reader :intent_id, :stripe, :controller
 
@@ -98,7 +98,7 @@ module SolidusStripe
     end
 
     def address_attributes
-      html_payment_source_data['address_attributes'] || SolidusStripe::AddressFromParamsService.new(form_data).call.attributes
+      html_payment_source_data['address_attributes'] || SolidusStripeArchive::AddressFromParamsService.new(form_data).call.attributes
     end
 
     def address_full_name

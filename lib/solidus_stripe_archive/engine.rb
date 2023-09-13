@@ -3,7 +3,7 @@
 require 'solidus_core'
 require 'solidus_support'
 
-module SolidusStripe
+module SolidusStripeArchive
   class Engine < Rails::Engine
     include SolidusSupport::EngineExtensions
 

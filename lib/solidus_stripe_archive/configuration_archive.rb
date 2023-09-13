@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module SolidusStripe
+module SolidusStripeArchive
   class ConfigurationArchive
     # Define here the settings for this extensions, e.g.:
     #

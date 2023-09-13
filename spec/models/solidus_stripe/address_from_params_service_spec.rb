@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe SolidusStripe::AddressFromParamsService do
+RSpec.describe SolidusStripeArchive::AddressFromParamsService do
   let(:service) { described_class.new(params, user) }
   let(:state) { create :state }
 

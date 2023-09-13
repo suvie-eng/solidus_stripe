@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module SolidusStripe
+module SolidusStripeArchive
   class AddressFromParamsService
     attr_reader :address_params, :user
 

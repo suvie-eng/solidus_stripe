@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe SolidusStripe::CreateIntentsPaymentService do
+RSpec.describe SolidusStripeArchive::CreateIntentsPaymentService do
   let(:service) { described_class.new(intent_id, stripe, controller) }
 
   let(:stripe) {

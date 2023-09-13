@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module Spree
-  class StripeController < SolidusStripe::IntentsController
+  class StripeController < SolidusStripeArchive::IntentsController
     include Core::ControllerHelpers::Order
 
     def confirm_payment
-      Deprecation.warn "please use SolidusStripe::IntentsController#confirm"
+      Deprecation.warn "please use SolidusStripeArchive::IntentsController#confirm"
 
       confirm
     end

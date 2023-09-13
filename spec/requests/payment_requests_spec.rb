@@ -6,7 +6,7 @@ RSpec.describe "Payment Request", type: :request do
   describe "POST /stripe/update_order" do
     it "responds with { success: true } when the order is correctly updated" do
       order = create(:order_ready_to_complete)
-      allow_any_instance_of(SolidusStripe::PaymentRequestController).to receive(:current_order).and_return(order)
+      allow_any_instance_of(SolidusStripeArchive::PaymentRequestController).to receive(:current_order).and_return(order)
 
       with_disabled_forgery_protection do
         post "/stripe/update_order", params: stripe_update_request_params(order: order)
@@ -19,7 +19,7 @@ RSpec.describe "Payment Request", type: :request do
     context "when phone number is provided as param and already set on the address" do
       it "overrides the address field" do
         order = create(:order_ready_to_complete)
-        allow_any_instance_of(SolidusStripe::PaymentRequestController).to receive(:current_order).and_return(order)
+        allow_any_instance_of(SolidusStripeArchive::PaymentRequestController).to receive(:current_order).and_return(order)
 
         expect {
           with_disabled_forgery_protection do
@@ -32,7 +32,7 @@ RSpec.describe "Payment Request", type: :request do
     context "when phone number is provided both as shipping address param and main param, and already set on the address" do
       it "overrides the address field giving precedence to the shipping address param" do
         order = create(:order_ready_to_complete)
-        allow_any_instance_of(SolidusStripe::PaymentRequestController).to receive(:current_order).and_return(order)
+        allow_any_instance_of(SolidusStripeArchive::PaymentRequestController).to receive(:current_order).and_return(order)
 
         expect {
           with_disabled_forgery_protection do
@@ -46,7 +46,7 @@ RSpec.describe "Payment Request", type: :request do
       it "does not populate the address field" do
         with_address_phone_not_required
         order = create(:order_ready_to_complete, shipping_address: create(:address, phone: nil))
-        allow_any_instance_of(SolidusStripe::PaymentRequestController).to receive(:current_order).and_return(order)
+        allow_any_instance_of(SolidusStripeArchive::PaymentRequestController).to receive(:current_order).and_return(order)
 
         expect {
           with_disabled_forgery_protection do
@@ -60,7 +60,7 @@ RSpec.describe "Payment Request", type: :request do
       it "populates the address field with the phone passed as param" do
         with_address_phone_not_required
         order = create(:order_ready_to_complete, shipping_address: create(:address, phone: nil))
-        allow_any_instance_of(SolidusStripe::PaymentRequestController).to receive(:current_order).and_return(order)
+        allow_any_instance_of(SolidusStripeArchive::PaymentRequestController).to receive(:current_order).and_return(order)
 
         expect {
           with_disabled_forgery_protection do
@@ -74,7 +74,7 @@ RSpec.describe "Payment Request", type: :request do
       it "populates the address field with the phone passed in the shipping field" do
         with_address_phone_not_required
         order = create(:order_ready_to_complete, shipping_address: create(:address, phone: nil))
-        allow_any_instance_of(SolidusStripe::PaymentRequestController).to receive(:current_order).and_return(order)
+        allow_any_instance_of(SolidusStripeArchive::PaymentRequestController).to receive(:current_order).and_return(order)
 
         expect {
           with_disabled_forgery_protection do
