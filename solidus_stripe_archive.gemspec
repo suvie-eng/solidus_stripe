@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'lib/solidus_stripe/version'
+require_relative 'lib/solidus_stripe_archive/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'solidus_stripe_archive'
