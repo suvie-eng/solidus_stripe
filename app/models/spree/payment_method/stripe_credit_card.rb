@@ -34,7 +34,7 @@ module Spree
       end
 
       def partial_name
-        'stripe'
+        'stripe_archive'
       end
 
       def v3_elements?
